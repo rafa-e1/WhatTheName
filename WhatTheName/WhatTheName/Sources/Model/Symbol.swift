@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct Symbol {
+struct Symbol: Encodable, Decodable {
     let name: String
 }

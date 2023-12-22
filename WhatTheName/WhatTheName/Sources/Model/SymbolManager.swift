@@ -11,6 +11,34 @@ import SwiftSoup
 
 class SymbolManager {
     
+    private let symbolsCacheFile = "SymbolsCache.json"
+    
+    func saveSymbolsToCache(_ symbols: [Symbol]) {
+        do {
+            let filePath = getDocumentsDirectory().appendingPathComponent(symbolsCacheFile)
+            let data = try JSONEncoder().encode(symbols)
+            try data.write(to: filePath, options: .atomic)
+        } catch {
+            print("Failed to save symbols: \(error)")
+        }
+    }
+    
+    func loadSymbolsFromCache() -> [Symbol]? {
+        let filePath = getDocumentsDirectory().appendingPathComponent(symbolsCacheFile)
+        do {
+            let data = try Data(contentsOf: filePath)
+            return try JSONDecoder().decode([Symbol].self, from: data)
+        } catch {
+            print("Failed to load symbols: \(error)")
+            return nil
+        }
+    }
+    
+    private func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
+    }
+    
     func fetchSymbols(completion: @escaping ([Symbol]?, Error?) -> Void) {
         DispatchQueue.global(qos: .background).async {
             let urlAddress = "https://developer.apple.com/sf-symbols/release-notes/"
