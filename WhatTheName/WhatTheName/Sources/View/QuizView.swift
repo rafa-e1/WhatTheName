@@ -12,6 +12,10 @@ import Then
 
 class QuizView: UIView {
     
+    private lazy var scrollView = UIScrollView()
+    
+    private lazy var containerView = UIView()
+    
     lazy var exitButton = UIButton().then {
         $0.setImage(UIImage(systemName: "door.left.hand.open")?
             .withTintColor(.systemRed, renderingMode: .alwaysOriginal)
@@ -48,32 +52,45 @@ class QuizView: UIView {
     }
     
     private func configureSubviews() {
-        [exitButton, symbolImageView].forEach {
-            addSubview($0)
-        }
+        addSubview(scrollView)
+        scrollView.addSubview(containerView)
+        [exitButton, symbolImageView, loadingIndicator].forEach { containerView.addSubview($0) }
         createNameButtons()
-        addSubview(loadingIndicator)
+        containerView.addSubview(loadingIndicator)
     }
     
     private func configureConstraints() {
+        makeScrollViewConstraints()
+        makeContainerViewConstraints()
         makeExitButtonConstraints()
         makeSymbolImageViewConstraints()
         makeNameButtonsConstraints()
         makeLoadingIndicatorViewConstraints()
     }
     
+    private func makeScrollViewConstraints() {
+        scrollView.snp.makeConstraints {
+            $0.edges.equalTo(safeAreaLayoutGuide)
+        }
+    }
+    
+    private func makeContainerViewConstraints() {
+        containerView.snp.makeConstraints {
+            $0.edges.width.equalToSuperview()
+        }
+    }
+    
     private func makeExitButtonConstraints() {
         exitButton.snp.makeConstraints {
-            $0.top.equalTo(safeAreaLayoutGuide)
+            $0.top.equalToSuperview()
             $0.trailing.equalTo(-20)
         }
     }
     
     private func makeSymbolImageViewConstraints() {
         symbolImageView.snp.makeConstraints {
-            $0.centerX.equalToSuperview()
-            $0.top.equalTo(exitButton.snp.bottom).offset(20)
-            $0.leading.equalToSuperview()
+            $0.centerX.leading.equalToSuperview()
+            $0.top.equalTo(exitButton.snp.bottom).offset(30)
             $0.height.equalTo(250)
         }
     }
@@ -82,13 +99,18 @@ class QuizView: UIView {
         for (index, button) in nameButtons.enumerated() {
             button.snp.makeConstraints {
                 if index == 0 {
-                    $0.top.equalTo(symbolImageView.snp.bottom).offset(50)
+                    $0.top.equalTo(symbolImageView.snp.bottom).offset(60)
                 } else {
                     $0.top.equalTo(nameButtons[index - 1].snp.bottom).offset(20)
                 }
                 $0.centerX.equalToSuperview()
-                $0.leading.equalTo(snp.leading).inset(20)
+                $0.leading.equalTo(20)
                 $0.height.equalTo(55)
+                
+                // 마지막 버튼의 경우 컨테이너뷰의 bottom과 연결
+                if index == nameButtons.count - 1 {
+                    $0.bottom.equalTo(-20)
+                }
             }
         }
     }
@@ -115,7 +137,7 @@ class QuizView: UIView {
                 $0.layer.cornerRadius = 10.0
             }
             nameButtons.append(button)
-            addSubview(button)
+            containerView.addSubview(button)
         }
         makeNameButtonsConstraints()
     }
