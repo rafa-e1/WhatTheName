@@ -29,7 +29,10 @@ class HomeViewController: UIViewController {
     }
     
     @objc private func startButtonTapped() {
-        print("Start button tapped")
+        let quizVC = QuizViewController()
+        quizVC.modalTransitionStyle = .crossDissolve
+        quizVC.modalPresentationStyle = .fullScreen
+        present(quizVC, animated: true)
     }
     
 }
