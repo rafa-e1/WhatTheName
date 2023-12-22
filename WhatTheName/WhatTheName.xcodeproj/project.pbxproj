@@ -14,6 +14,12 @@
 		058926AF2B357F0D00224C97 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 058926AD2B357F0D00224C97 /* LaunchScreen.storyboard */; };
 		058926BD2B357F8B00224C97 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058926BC2B357F8B00224C97 /* HomeViewController.swift */; };
 		058926BF2B35817D00224C97 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058926BE2B35817D00224C97 /* HomeView.swift */; };
+		058926C12B3581F800224C97 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058926C02B3581F800224C97 /* QuizView.swift */; };
+		058926C32B35821100224C97 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058926C22B35821100224C97 /* UIColor+Extensions.swift */; };
+		058926C52B35822300224C97 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058926C42B35822300224C97 /* QuizViewController.swift */; };
+		058926C72B35824E00224C97 /* Vibration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058926C62B35824E00224C97 /* Vibration.swift */; };
+		058926C92B35825F00224C97 /* Symbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058926C82B35825F00224C97 /* Symbol.swift */; };
+		058926CB2B35826900224C97 /* SymbolManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058926CA2B35826900224C97 /* SymbolManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +31,12 @@
 		058926B02B357F0D00224C97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		058926BC2B357F8B00224C97 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		058926BE2B35817D00224C97 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		058926C02B3581F800224C97 /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
+		058926C22B35821100224C97 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		058926C42B35822300224C97 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
+		058926C62B35824E00224C97 /* Vibration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vibration.swift; sourceTree = "<group>"; };
+		058926C82B35825F00224C97 /* Symbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbol.swift; sourceTree = "<group>"; };
+		058926CA2B35826900224C97 /* SymbolManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolManager.swift; sourceTree = "<group>"; };
 		0F0FBCF5701CA6E31476F4DC /* Pods-WhatTheName.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatTheName.debug.xcconfig"; path = "Target Support Files/Pods-WhatTheName/Pods-WhatTheName.debug.xcconfig"; sourceTree = "<group>"; };
 		1EAE0E586278689482403D93 /* Pods_WhatTheName.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhatTheName.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DECD41D590C7531D6339D89B /* Pods-WhatTheName.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatTheName.release.xcconfig"; path = "Target Support Files/Pods-WhatTheName/Pods-WhatTheName.release.xcconfig"; sourceTree = "<group>"; };
@@ -103,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				058926BC2B357F8B00224C97 /* HomeViewController.swift */,
+				058926C42B35822300224C97 /* QuizViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -111,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				058926BE2B35817D00224C97 /* HomeView.swift */,
+				058926C02B3581F800224C97 /* QuizView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -118,6 +132,10 @@
 		058926BB2B357F5900224C97 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				058926C62B35824E00224C97 /* Vibration.swift */,
+				058926C82B35825F00224C97 /* Symbol.swift */,
+				058926CA2B35826900224C97 /* SymbolManager.swift */,
+				058926C22B35821100224C97 /* UIColor+Extensions.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -253,8 +271,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				058926C72B35824E00224C97 /* Vibration.swift in Sources */,
 				058926A32B357F0C00224C97 /* AppDelegate.swift in Sources */,
+				058926C52B35822300224C97 /* QuizViewController.swift in Sources */,
+				058926C32B35821100224C97 /* UIColor+Extensions.swift in Sources */,
 				058926BF2B35817D00224C97 /* HomeView.swift in Sources */,
+				058926C92B35825F00224C97 /* Symbol.swift in Sources */,
+				058926C12B3581F800224C97 /* QuizView.swift in Sources */,
+				058926CB2B35826900224C97 /* SymbolManager.swift in Sources */,
 				058926A52B357F0C00224C97 /* SceneDelegate.swift in Sources */,
 				058926BD2B357F8B00224C97 /* HomeViewController.swift in Sources */,
 			);
@@ -402,6 +426,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7WULLR98GP;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WhatTheName/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "What the Name";
@@ -434,6 +459,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7WULLR98GP;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WhatTheName/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "What the Name";
