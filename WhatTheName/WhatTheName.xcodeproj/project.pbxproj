@@ -13,6 +13,7 @@
 		058926AC2B357F0D00224C97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058926AB2B357F0D00224C97 /* Assets.xcassets */; };
 		058926AF2B357F0D00224C97 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 058926AD2B357F0D00224C97 /* LaunchScreen.storyboard */; };
 		058926BD2B357F8B00224C97 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058926BC2B357F8B00224C97 /* HomeViewController.swift */; };
+		058926BF2B35817D00224C97 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058926BE2B35817D00224C97 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		058926AE2B357F0D00224C97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		058926B02B357F0D00224C97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		058926BC2B357F8B00224C97 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		058926BE2B35817D00224C97 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		0F0FBCF5701CA6E31476F4DC /* Pods-WhatTheName.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatTheName.debug.xcconfig"; path = "Target Support Files/Pods-WhatTheName/Pods-WhatTheName.debug.xcconfig"; sourceTree = "<group>"; };
 		1EAE0E586278689482403D93 /* Pods_WhatTheName.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhatTheName.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DECD41D590C7531D6339D89B /* Pods-WhatTheName.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatTheName.release.xcconfig"; path = "Target Support Files/Pods-WhatTheName/Pods-WhatTheName.release.xcconfig"; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 		058926BA2B357F4B00224C97 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				058926BE2B35817D00224C97 /* HomeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -125,7 +128,6 @@
 				0F0FBCF5701CA6E31476F4DC /* Pods-WhatTheName.debug.xcconfig */,
 				DECD41D590C7531D6339D89B /* Pods-WhatTheName.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -252,6 +254,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				058926A32B357F0C00224C97 /* AppDelegate.swift in Sources */,
+				058926BF2B35817D00224C97 /* HomeView.swift in Sources */,
 				058926A52B357F0C00224C97 /* SceneDelegate.swift in Sources */,
 				058926BD2B357F8B00224C97 /* HomeViewController.swift in Sources */,
 			);
